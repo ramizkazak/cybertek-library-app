@@ -1,6 +1,6 @@
 package com.cybertek.library.step_definitions;
 
-import com.cybertek.library.pages.DashboardPage;
+import com.cybertek.library.pages.HomePage;
 import com.cybertek.library.pages.UsersPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,20 +12,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShowRecords_StepsDefinitions {
-    DashboardPage dashboardPage = new DashboardPage();
+    HomePage homePage = new HomePage();
     UsersPage usersPage = new UsersPage();
 
     @When("I click on {string} link")
     public void i_click_on_link(String link) {
         switch(link.toLowerCase()){
             case "dashboard":
-                dashboardPage.dashboardPageLink.click();
+                homePage.dashboardPageLink.click();
                 break;
             case "users":
-                dashboardPage.usersPageLink.click();
+                homePage.usersPageLink.click();
                 break;
             case "books":
-                dashboardPage.booksPageLink.click();
+                homePage.booksPageLink.click();
                 break;
         }
 

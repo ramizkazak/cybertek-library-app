@@ -1,6 +1,6 @@
 package com.cybertek.library.step_definitions;
 
-import com.cybertek.library.pages.DashboardPage;
+import com.cybertek.library.pages.HomePage;
 import com.cybertek.library.pages.LoginPage;
 import com.cybertek.library.utilities.BrowserUtils;
 import com.cybertek.library.utilities.ConfigurationReader;
@@ -10,12 +10,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Login_StepDefinitions {
     LoginPage loginPage = new LoginPage();
-    DashboardPage dashboardPage = new DashboardPage();
+    HomePage homePage = new HomePage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
 
 
@@ -43,14 +44,14 @@ public class Login_StepDefinitions {
 
     @Then("dashboard should be displayed")
     public void dashboard_should_be_displayed() {
+        try {
+            Assert.assertTrue(homePage.dashboardPageLink.isDisplayed());
+        }catch (NoSuchElementException e){
+            System.out.println(homePage.rightNavigationBAr.getText()+" is not allow to see Dashboard PAge link. FAILED!!!");
+        }
 
-        String expectedTitle ="Library";
-        wait.until(ExpectedConditions.titleIs(expectedTitle));
-        String actualTitle=Driver.getDriver().getTitle();
-        Assert.assertEquals(expectedTitle,actualTitle);
-        DashboardPage logOut = new DashboardPage();
-        logOut.rightNavigationBAr.click();
-        logOut.logOutButton.click();
+       homePage.rightNavigationBAr.click();
+        homePage.logOutButton.click();
     }
 
     @When("I enter username {string}")
@@ -70,8 +71,8 @@ public class Login_StepDefinitions {
 
     @When("there should be {string} users")
     public void there_should_be_users(String expectedNum) {
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.userCount));
-        String actualNum = dashboardPage.userCount.getText();
+        wait.until(ExpectedConditions.visibilityOf(homePage.userCount));
+        String actualNum = homePage.userCount.getText();
         Assert.assertEquals("FAiled!!!!",expectedNum,actualNum);
     }
 

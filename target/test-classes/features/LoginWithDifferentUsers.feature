@@ -3,7 +3,7 @@ Feature: Verify user information
   using their correct emails and passwords. When
   I login, I should be able to see
   username in the account username section.
-@wip
+
 Scenario Outline: Verify user information <email>
 Given I am on the login page
 When I login using "<email>" and "<password>"
