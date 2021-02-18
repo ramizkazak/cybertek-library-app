@@ -1,6 +1,6 @@
-package com.cybertek.library.step_definitions;
+package com.libraryCT.library.step_definitions;
 
-import com.cybertek.library.pages.UsersPage;
+import com.libraryCT.library.pages.UsersPage;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;

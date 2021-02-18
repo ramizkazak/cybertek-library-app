@@ -1,10 +1,10 @@
-package com.cybertek.library.step_definitions;
+package com.libraryCT.library.step_definitions;
 
-import com.cybertek.library.pages.HomePage;
-import com.cybertek.library.pages.LoginPage;
-import com.cybertek.library.utilities.BrowserUtils;
-import com.cybertek.library.utilities.ConfigurationReader;
-import com.cybertek.library.utilities.Driver;
+import com.libraryCT.library.pages.HomePage;
+import com.libraryCT.library.pages.LoginPage;
+import com.libraryCT.library.utilities.BrowserUtils;
+import com.libraryCT.library.utilities.ConfigurationReader;
+import com.libraryCT.library.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

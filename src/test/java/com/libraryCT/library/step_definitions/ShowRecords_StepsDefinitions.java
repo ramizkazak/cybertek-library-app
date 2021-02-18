@@ -1,7 +1,7 @@
-package com.cybertek.library.step_definitions;
+package com.libraryCT.library.step_definitions;
 
-import com.cybertek.library.pages.HomePage;
-import com.cybertek.library.pages.UsersPage;
+import com.libraryCT.library.pages.HomePage;
+import com.libraryCT.library.pages.UsersPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;

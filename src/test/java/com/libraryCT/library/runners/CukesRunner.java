@@ -1,4 +1,4 @@
-package com.cybertek.library.runners;
+package com.libraryCT.library.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = "html:target/cucumber-report.html",
         features = "src/test/resources/features",
-        glue = "com/cybertek/library/step_definitions",
+        glue = "com/libraryCT/library/step_definitions",
         dryRun = false,
         tags = "@wip"
 )
